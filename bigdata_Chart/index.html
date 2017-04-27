@@ -8,85 +8,22 @@
     <title>BBS</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/grid.css">
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+
 </head>
 
 
 <body>
 <div class="container-fluid col-xs-12">
+    <div id="option">
+        <input name="updateButton"
+               type="button"
+               value="Update"
+               onclick="updateData()" />
+    </div>
     <div class="row col-xs-12 center-block">
         <div class="grid-left col-xs-9">
 
-		 <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
-        <script>
-        var data = [[5,3], [10,17], [15,4], [2,8]];
-        var data2 = [[1,7], [14,2], [5,14], [12,5]];
-
-    var margin = {top: 20, right: 15, bottom: 60, left: 60}
-      , width = 960 - margin.left - margin.right
-      , height = 500 - margin.top - margin.bottom;
-
-    var x = d3.scale.linear()
-              .domain([0, d3.max(data, function(d) { return d[0]; })])
-              .range([ 0, width ]);
-
-    var y = d3.scale.linear()
-            .domain([0, d3.max(data, function(d) { return d[1]; })])
-            .range([ height, 0 ]);
-
-    var chart = d3.select('.grid-left')
-  .append('svg:svg')
-  .attr('width', width + margin.right + margin.left)
-  .attr('height', height + margin.top + margin.bottom)
-  .attr('class', 'chart')
-
-    var main = chart.append('g')
-  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-  .attr('width', width)
-  .attr('height', height)
-  .attr('class', 'main')
-
-    // draw the x axis
-    var xAxis = d3.svg.axis()
-  .scale(x)
-  .orient('bottom');
-
-    main.append('g')
-  .attr('transform', 'translate(0,' + height + ')')
-  .attr('class', 'main axis date')
-  .call(xAxis);
-
- // draw the y axis
-    var yAxis = d3.svg.axis()
-  .scale(y)
-  .orient('left');
-
-    main.append('g')
-  .attr('transform', 'translate(0,0)')
-  .attr('class', 'main axis date')
-  .call(yAxis);
-
-    var g = main.append("svg:g");
-
-    g.selectAll("scatter-dots")
-      .data(data)
-      .enter().append("svg:circle")
-          .attr("cx", function (d,i) { return x(d[0]); } )
-          .attr("cy", function (d) { return y(d[1]); } )
-          .attr("r", 8)
-          .style("fill", "red");
-
-g.selectAll("scatter-dots")
-      .data(data2)
-      .enter().append("svg:circle")
-          .attr("cx", function (d,i) { return x(d[0]); } )
-          .attr("cy", function (d) { return y(d[1]); } )
-          .attr("r", 12)
-          .style("fill", "blue");
-
-        </script>
 
         </div>
         <div class=" grid-right col-xs-3">
@@ -112,41 +49,13 @@ g.selectAll("scatter-dots")
 
 </div>
 
-<script>
-    var points = [];
-
-    $(document).ready(() => {
-        $('#more_fields').on('click', () => {
-        var xVal = $('#xCoord').val();
-        var yVal = $('#yCoord').val();
-
-    if(xVal && yVal) {
-        points.push({
-            x: xVal,
-            y: yVal
-        });
-
-        $('#points').append('<div>(' + xVal + ', ' + yVal + ')</div>');
-    }
-    });
-
-//    jsonPoints = JSON.stringify(points)
-    $('#update').on('click', () => {
-        $.ajax({
-            type: 'GET',
-            url: 'http://www.catohenry.com:8080/query/query?points='+encodeURIComponent(JSON.stringify(points)),
-            success: (data) => {
-                console.log(data)
-            //update stuff with the results or something
-        }
-    });
-    });
-    });
 
 
-
-</script>
-
-
+<script src="js/bootstrap.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
+<script type="text/javascript" src="js/chart_bbs.js"></script>
+<script type="text/javascript" src="js/points_json.js"></script>
 </body>
 </html>
