@@ -3,10 +3,24 @@ body {
     padding-top: 20px;
 }
 
+.main text {
+    font: 10px sans-serif;
+}
+
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: black;
+    fill: none;
+}
+
+circle {
+    fill: steelblue;
+}
+
 
 .grid-left {
     border: solid;
-    height: 600px;
+    height: 750px;
     float: left;
     margin: 0 auto;
     overflow: auto;
@@ -16,7 +30,7 @@ body {
     border-bottom: solid;
     border-top: solid;
     border-right: solid;
-    height: 600px;
+    height: 750px;
     text-align: center;
     float: right;
     margin: 0 auto;

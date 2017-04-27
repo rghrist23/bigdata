@@ -12,37 +12,14 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
+
+
 <body>
 <div class="container-fluid col-xs-12">
     <div class="row col-xs-12 center-block">
-        <div class="grid-left col-xs-8">
-            <style>
-			.chart {
+        <div class="grid-left col-xs-9">
 
-			}
-
-			.main text {
-				font: 10px sans-serif;
-			}
-
-			.axis line, .axis path {
-    			shape-rendering: crispEdges;
-    			stroke: black;
-    			fill: none;
-			}
-
-			circle {
-    			fill: steelblue;
-			}
-
-</style>
-	
 		 <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
-      </head>
-      <body>
-        <div class='content'>
-          <!-- /the chart goes here -->
-        </div>
         <script>
         var data = [[5,3], [10,17], [15,4], [2,8]];
         var data2 = [[1,7], [14,2], [5,14], [12,5]];
@@ -59,7 +36,7 @@
             .domain([0, d3.max(data, function(d) { return d[1]; })])
             .range([ height, 0 ]);
 
-    var chart = d3.select('body')
+    var chart = d3.select('.grid-left')
   .append('svg:svg')
   .attr('width', width + margin.right + margin.left)
   .attr('height', height + margin.top + margin.bottom)
@@ -110,9 +87,9 @@ g.selectAll("scatter-dots")
           .style("fill", "blue");
 
         </script>
-   
+
         </div>
-        <div class=" grid-right col-xs-4">
+        <div class=" grid-right col-xs-3">
             <div class="row col-xs-6 center-block">
                 <h2>X</h2>
                 <div class="input-group" id="wrapper">
