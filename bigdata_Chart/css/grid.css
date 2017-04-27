@@ -1,0 +1,24 @@
+body {
+    margin : 0px;
+    padding-top: 20px;
+}
+
+
+.grid-left {
+    border: solid;
+    height: 600px;
+    float: left;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.grid-right {
+    border-bottom: solid;
+    border-top: solid;
+    border-right: solid;
+    height: 600px;
+    text-align: center;
+    float: right;
+    margin: 0 auto;
+    overflow: auto;
+}
