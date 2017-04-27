@@ -16,13 +16,11 @@
 <body>
 <div class="container-fluid col-xs-12">
     <div id="option">
-        <input name="updateButton"
-               type="button"
-               value="Update"
-               onclick="updateData()" />
     </div>
     <div class="row col-xs-12 center-block">
         <div class="grid-left col-xs-9">
+            <input name="updateButton" type="button" class="btn btn-primary" value="Show Graph" onclick="updateData()" />
+
 
 
         </div>
@@ -32,15 +30,16 @@
                 <div class="input-group" id="wrapper">
                     <input name="xCoordinate" type="text" maxlength="256" id="xCoord" placeholder="X Coordinate">
                 </div>
+                <input type="button" class="btn btn-primary" id="more_fields" value="Submit More" />
+
             </div>
             <div class="row col-xs-6 center-block">
                 <h2>Y</h2>
                 <div class="input-group" id="y_wrapper">
                     <input name="yCoordinate" type="text" maxlength="256" id="yCoord" placeholder="Y Coordinate">
                 </div>
+            <button id="update" type="button" class="btn btn-success">Update</button>
             </div>
-            <input type="button" id="more_fields" value="Submit More" />
-            <button id="update">Update</button>
 
             <div id="points"></div>
 
